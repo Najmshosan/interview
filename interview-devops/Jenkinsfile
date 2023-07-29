@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    environment {
+        TIMESTAMP = new Date().getTime()
+        PROJECT_VERSION = "1.0.1.${TIMESTAMP}"
+    }
+    stages {
+        stage('Update Project Version') {
+            steps {
+                script {
+                    // Update the project version using Maven
+                    sh "mvn versions:set -DnewVersion=${PROJECT_VERSION}"
+                }
+            }
+        }
+        stage('Build and Test') {
+            steps {
+                script {
+                    // Build and test the project using Maven
+                    sh "mvn clean package -DskipTests"
+                }
+            }
+        }
+        stage('Execute JAR File') {
+            steps {
+                script {
+                    // Execute the generated JAR file
+                    sh "java -jar my-api/target/my-api-${PROJECT_VERSION}.jar"
+                }
+            }
+        }
+    }
+}
