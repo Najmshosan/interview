@@ -39,5 +39,9 @@ services:
     networks:
       - correvate
 
-  # TODO: include app...
- 
+  # # TODO: include app...
+  # logging:
+  #   driver: fluentd
+  #   options:
+  #     fluentd-address: "localhost:24224"  # Replace with the address of your Fluentd instance
+  #     tag: "your_custom_log_tag"         # Replace with a custom log tag for identifying logs in Fluentd

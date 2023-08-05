@@ -52,7 +52,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- Docker image generation
+			Docker image generation
 			<plugin>
 				<groupId>io.fabric8</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
@@ -92,7 +92,7 @@
 						</image>
 					</images>
 				</configuration>
-			</plugin> -->
+			</plugin>
 		</plugins>
 	</build>
 </project>

@@ -23,3 +23,14 @@ So you can test if the application is healthy by accessing path `/actuator/healt
 $ curl http://localhost:8080/actuator/health
 {"status":"UP"}
 ```
+
+# My-API Project
+
+This is the My-API project.
+
+## Build and Run with Docker
+
+1. Build the Docker image:
+   ```bash
+   mvn docker:build
+
